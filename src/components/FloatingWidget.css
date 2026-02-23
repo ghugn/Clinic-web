@@ -1,0 +1,85 @@
+.floating-widget {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.widget-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    padding: 12px 8px;
+    width: 70px;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.widget-item:hover {
+    transform: translateX(-5px);
+    box-shadow: var(--shadow-lg);
+    background-color: var(--color-bg-alt);
+    color: var(--color-primary-dark);
+}
+
+.widget-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    color: #8c5a2b;
+    /* Match the brown aesthetic of the user image */
+}
+
+.widget-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    color: #8c5a2b;
+}
+
+.zalo-text-icon {
+    font-weight: 800;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    letter-spacing: -1px;
+}
+
+/* Custom coloring based on user reference */
+.widget-item.booking .widget-icon,
+.widget-item.booking .widget-text {
+    color: #924b22;
+}
+
+.widget-item.facebook .widget-icon,
+.widget-item.facebook .widget-text {
+    color: #7b3810;
+}
+
+.widget-item.hotline .widget-icon,
+.widget-item.hotline .widget-text {
+    color: #7e3612;
+}
+
+.widget-item.zalo .widget-icon,
+.widget-item.zalo .widget-text {
+    color: #7e3612;
+}
+
+@media (max-width: 768px) {
+    .floating-widget {
+        right: 10px;
+        transform: scale(0.85) translateY(-50%);
+        transform-origin: right center;
+    }
+}

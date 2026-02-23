@@ -1,0 +1,139 @@
+.pb-padding {
+    padding-bottom: 6rem;
+}
+
+.booking-form-wrapper {
+    display: flex;
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.booking-info {
+    width: 35%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.booking-info h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefits-list li {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    color: var(--color-text-light);
+}
+
+.font-bold {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.booking-form {
+    width: 65%;
+    padding: 3rem;
+    background-color: var(--color-white);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group.full-width {
+    grid-column: span 2;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text);
+    background-color: #fafafa;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    background-color: var(--color-white);
+}
+
+.form-submit-btn {
+    width: 100%;
+    padding: 1.1rem;
+    font-size: 1.05rem;
+}
+
+.success-message {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 4rem 2rem;
+    background-color: var(--color-white);
+}
+
+.success-message h2 {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+    .booking-form-wrapper {
+        flex-direction: column;
+    }
+
+    .booking-info {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .booking-form {
+        width: 100%;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .input-group.full-width {
+        grid-column: span 1;
+    }
+}

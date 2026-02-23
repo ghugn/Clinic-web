@@ -1,0 +1,198 @@
+.navbar-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(252, 251, 249, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.navbar-logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    letter-spacing: 2px;
+}
+
+.navbar-logo span {
+    color: var(--color-primary);
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--color-primary);
+    transition: width var(--transition-fast);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Language Selector */
+.language-selector {
+    position: relative;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-sm);
+    display: none;
+    flex-direction: column;
+    min-width: 140px;
+    padding: 0.5rem 0;
+    /* Removed margin-top to prevent hover area loss, used border instead */
+    border-top: 10px solid transparent;
+    /* invisible bridge */
+    background-clip: padding-box;
+}
+
+.language-selector:hover .lang-dropdown {
+    display: flex;
+}
+
+.lang-dropdown button {
+    background: none;
+    border: none;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--color-text);
+}
+
+.lang-dropdown button:hover {
+    background-color: var(--color-bg-alt);
+    color: var(--color-primary);
+}
+
+.mobile-controls {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .mobile-controls {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .mobile-menu-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--color-text);
+    }
+
+    .language-selector.mobile .lang-dropdown {
+        right: auto;
+        left: -50px;
+    }
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--color-white);
+        padding: 1rem 2rem;
+        box-shadow: var(--shadow-md);
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .mobile-menu .nav-link,
+    .mobile-menu .btn-primary {
+        margin: 1rem 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

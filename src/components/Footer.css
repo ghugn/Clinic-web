@@ -1,0 +1,118 @@
+.footer-section {
+    background-color: var(--color-bg-alt);
+    padding-top: 4rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 2rem;
+    padding-bottom: 3rem;
+}
+
+.footer-logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.footer-logo span {
+    color: var(--color-primary);
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    max-width: 300px;
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    color: var(--color-text);
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+.social-links a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+.footer-links-group h4,
+.footer-contact h4 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.footer-links-group a {
+    display: block;
+    margin-bottom: 1.25rem;
+    color: var(--color-text-light);
+    font-size: 1.05rem;
+}
+
+.footer-links-group a:hover {
+    color: var(--color-primary);
+    padding-left: 5px;
+    /* slight hover nudge */
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-light);
+}
+
+.footer-contact p svg {
+    color: var(--color-primary);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: var(--color-bg);
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand p {
+        max-width: 100%;
+    }
+}
